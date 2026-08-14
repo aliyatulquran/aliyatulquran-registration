@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>مركز عالية القرآن — نموذج التسجيل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C2A356;--gold-l:#D9BE7B;--gold-d:#8B6914;--gold-s:#EBD9A0;
+  --ink:#0F2E26;--ink2:#163A30;--ink3:#1D4638;
+  --parch:#FAF6EC;--parch2:#F2ECD8;--parch3:#E8DFC4;
+  --muted:#6E7C74;--muted2:#9DB0A6;
+  --border:rgba(194,163,86,.3);--border2:rgba(194,163,86,.15);
+  --red:#C0392B;--green:#1E6B45;
+  --r:10px;--r2:14px;--r3:20px;
+  --shadow:0 4px 24px rgba(15,46,38,.12);
+  --shadow2:0 8px 44px rgba(15,46,38,.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:var(--parch);color:var(--ink);min-height:100vh;direction:rtl;overflow-x:hidden}
+body.ltr{font-family:'Cormorant Garamond',serif;direction:ltr;text-align:left}
+body.ru{font-family:'Cormorant Garamond',serif;direction:ltr;text-align:left}
+body.fr{font-family:'Cormorant Garamond',serif;direction:ltr;text-align:left}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C2A356' fill-opacity='0.04'%3E%3Cpath d='M50 50v-6h-3v6h-6v3h6v6h3v-6h6v-3h-6zm0-44V0h-3v6h-6v3h6v6h3V9h6V6h-6zM6 50v-6H3v6H0v3h3v6h3v-6h6v-3H6zM6 6V0H3v6H0v3h3v6h3V9h6V6H6z'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(160deg,#FAF6EC 0%,#F5EDD6 50%,#EFE4C8 100%)}
+
+[data-t]{display:none}
+body[data-lang="ar"] [data-t~="ar"]{display:block}
+body[data-lang="ar"] [data-t~="ar-i"]{display:inline}
+body[data-lang="ar"] [data-t~="ar-f"]{display:flex}
+body[data-lang="en"] [data-t~="en"]{display:block}
+body[data-lang="en"] [data-t~="en-i"]{display:inline}
+body[data-lang="en"] [data-t~="en-f"]{display:flex}
+body[data-lang="ru"] [data-t~="ru"]{display:block}
+body[data-lang="ru"] [data-t~="ru-i"]{display:inline}
+body[data-lang="ru"] [data-t~="ru-f"]{display:flex}
+body[data-lang="fr"] [data-t~="fr"]{display:block}
+body[data-lang="fr"] [data-t~="fr-i"]{display:inline}
+body[data-lang="fr"] [data-t~="fr-f"]{display:flex}
+
+.lang-bar{position:sticky;top:0;z-index:200;background:rgba(15,46,38,.95);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;backdrop-filter:blur(12px)}
+.lb{background:transparent;border:1px solid rgba(200,168,75,.4);border-radius:100px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:1.5px;color:rgba(250,246,236,.75);cursor:pointer;transition:all .25s;font-family:inherit;text-transform:uppercase;min-height:40px;display:inline-flex;align-items:center}
+.lb.active,.lb:hover{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:var(--ink);border-color:var(--gold)}
+
+.site-header{background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 60%,var(--ink3) 100%);padding:clamp(32px,6vw,64px) clamp(16px,4vw,32px) clamp(28px,5vw,52px);text-align:center;position:relative;overflow:hidden}
+.site-header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C2A356' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.header-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(200,168,75,.12),transparent 70%);pointer-events:none}
+.gold-top-bar{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--gold-d),var(--gold-l),var(--gold),var(--gold-l),var(--gold-d),transparent)}
+.logo-wrap{position:relative;z-index:1;margin-bottom:20px;display:inline-block}
+.logo-img-wrap{width:clamp(228px,42vw,330px);height:clamp(228px,42vw,330px);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.logo-real{width:100%;height:100%;object-fit:contain}
+.logo-hex{width:clamp(228px,42vw,330px);height:clamp(228px,42vw,330px);background:linear-gradient(135deg,rgba(200,168,75,.18),rgba(200,168,75,.06));border:2px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 0 40px rgba(200,168,75,.2)}
+.logo-letter{font-family:'Amiri',serif;font-size:clamp(30px,6vw,52px);background:linear-gradient(160deg,var(--gold-s),var(--gold-l),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700}
+.center-name-ar{font-family:'Amiri',serif;font-size:clamp(24px,5vw,48px);font-weight:700;background:linear-gradient(135deg,var(--gold-s),var(--gold-l),var(--gold),var(--gold-d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:3px;line-height:1.2;display:block;position:relative;z-index:1}
+@media(max-width:480px){.center-name-ar{letter-spacing:1px}}
+.center-name-en{font-family:'Cinzel',serif;font-size:clamp(12px,2.5vw,20px);color:var(--gold-l);letter-spacing:4px;opacity:.85;display:block;margin-top:6px;position:relative;z-index:1}
+@media(max-width:480px){.center-name-en{letter-spacing:2px;font-size:11px}}
+.center-sub{font-size:10px;letter-spacing:2px;color:var(--muted2);margin-top:8px;position:relative;z-index:1;text-transform:uppercase}
+.header-divider{width:160px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 0}
+
+.welcome-box{max-width:720px;margin:clamp(20px,4vw,36px) auto 0;background:linear-gradient(135deg,rgba(200,168,75,.1),rgba(200,168,75,.04));border:1px solid var(--border);border-radius:var(--r3);padding:clamp(20px,4vw,36px) clamp(18px,5vw,44px);position:relative;z-index:1;text-align:start;width:100%;overflow-wrap:break-word;word-break:break-word}
+.welcome-box::before{content:'"';font-family:'Amiri',serif;font-size:80px;color:var(--gold-d);opacity:.3;position:absolute;top:-10px;inset-inline-end:20px;line-height:1}
+.welcome-title{font-family:'Amiri',serif;font-size:clamp(17px,3vw,24px);color:var(--gold-l);margin-bottom:12px;font-weight:700}
+body.ltr .welcome-title{font-family:'Cinzel',serif;font-size:clamp(13px,2vw,18px);letter-spacing:1px}
+.welcome-text{font-size:clamp(13px,1.8vw,15px);color:rgba(250,246,236,.75);line-height:1.9;font-weight:300}
+body.ltr .welcome-text{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,2vw,17px)}
+.wa-block{margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.wa-btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;border-radius:100px;padding:11px 22px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.35);transition:all .3s;font-family:inherit;min-height:44px}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.5)}
+.wa-icon{width:20px;height:20px;flex-shrink:0}
+.wa-num{font-size:12px;color:rgba(250,246,236,.6);letter-spacing:.5px;direction:ltr;display:inline-block}
+
+.location-section{max-width:820px;margin:clamp(20px,4vw,36px) auto 0;padding:0 clamp(12px,4vw,32px)}
+.location-card{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);border:1px solid var(--border);border-radius:var(--r3);padding:clamp(20px,4vw,36px) clamp(18px,5vw,40px);position:relative;overflow:hidden}
+.location-card::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C2A356' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.location-inner{position:relative;z-index:1;display:flex;align-items:flex-start;gap:clamp(14px,3vw,28px);flex-wrap:wrap}
+.location-pin{width:56px;height:56px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,rgba(200,168,75,.25),rgba(200,168,75,.08));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(200,168,75,.2)}
+.location-pin svg{width:26px;height:26px}
+.location-content{flex:1;min-width:180px}
+.location-label{font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:8px;opacity:.8}
+.location-title{font-family:'Amiri',serif;font-size:clamp(16px,3vw,22px);color:var(--gold-l);font-weight:700;margin-bottom:8px;overflow-wrap:break-word}
+body.ltr .location-title{font-family:'Cinzel',serif;font-size:clamp(13px,2.5vw,18px);letter-spacing:1px}
+.location-address{font-size:clamp(13px,1.8vw,14px);color:rgba(250,246,236,.75);line-height:1.8;margin-bottom:16px;overflow-wrap:break-word}
+.maps-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold-s),var(--gold-l),var(--gold));color:var(--ink);border:none;border-radius:100px;padding:11px 22px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 4px 18px rgba(200,168,75,.4);transition:all .3s;font-family:inherit;min-height:44px}
+.maps-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,168,75,.6)}
+.maps-btn svg{width:16px;height:16px;flex-shrink:0}
+
+.type-step{max-width:820px;margin:clamp(20px,4vw,36px) auto 0;padding:0 clamp(12px,4vw,32px)}
+.type-step-card{background:white;border:2.5px solid var(--gold);border-radius:var(--r3);overflow:hidden;box-shadow:0 8px 40px rgba(200,168,75,.28);position:relative}
+.type-step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--gold-d),var(--gold-l),var(--gold),var(--gold-l),var(--gold-d),transparent)}
+.type-step-header{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);padding:clamp(14px,3vw,22px) clamp(18px,4vw,28px);display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.type-step-num{width:46px;height:46px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold-l),var(--gold));display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:var(--ink);font-family:'Cinzel',serif;box-shadow:0 0 20px rgba(200,168,75,.4)}
+.type-step-titles{flex:1;min-width:120px}
+.type-step-main{font-family:'Amiri',serif;font-size:clamp(16px,3vw,22px);font-weight:700;color:var(--gold-l)}
+body.ltr .type-step-main{font-family:'Cinzel',serif;font-size:clamp(13px,2.5vw,17px);letter-spacing:1px}
+.type-step-sub{font-size:10px;color:var(--muted2);letter-spacing:1px;margin-top:3px;font-family:'Cinzel',serif}
+.type-required-badge{background:linear-gradient(135deg,rgba(192,57,43,.2),rgba(192,57,43,.1));border:1px solid rgba(192,57,43,.4);border-radius:100px;padding:5px 14px;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#e74c3c;text-transform:uppercase;white-space:nowrap;font-family:'Cinzel',serif;flex-shrink:0}
+.type-step-body{padding:clamp(16px,3vw,26px)}
+.type-instruction{text-align:center;margin-bottom:18px;font-size:clamp(12px,1.8vw,14px);color:var(--muted);font-style:italic;line-height:1.6}
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:600px){.type-grid{grid-template-columns:1fr;gap:10px}}
+.type-btn{background:var(--parch2);border:2px solid var(--parch3);border-radius:var(--r2);padding:clamp(16px,3vw,24px) 14px;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;min-height:100px}
+.type-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,168,75,.12),transparent);opacity:0;transition:opacity .3s}
+.type-btn:hover::before,.type-btn.sel::before{opacity:1}
+.type-btn:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(200,168,75,.2);transform:translateY(-2px)}
+.type-btn.sel{border-color:var(--gold);background:linear-gradient(135deg,rgba(200,168,75,.18),var(--parch2));box-shadow:0 6px 28px rgba(200,168,75,.3);transform:translateY(-3px)}
+.type-check{position:absolute;top:10px;inset-inline-end:10px;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--gold-l),var(--gold));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;font-size:13px;color:var(--ink);font-weight:900}
+.type-btn.sel .type-check{opacity:1}
+.type-icon{font-size:clamp(26px,4vw,34px);margin-bottom:10px;display:block}
+.type-name{font-family:'Amiri',serif;font-size:clamp(15px,2.5vw,19px);color:var(--ink);font-weight:700;display:block;line-height:1.3}
+body.ltr .type-name{font-family:'Cinzel',serif;font-size:clamp(12px,2vw,15px);letter-spacing:.5px}
+.type-name-sub{font-family:'Cinzel',serif;font-size:10px;letter-spacing:1.5px;color:var(--muted);display:block;margin-top:5px}
+.type-btn.sel .type-name{color:var(--gold-d)}
+.type-btn.sel .type-name-sub{color:var(--gold)}
+.type-step-card.pulse-needed .type-grid{animation:pulseBorder 1.5s ease 3}
+@keyframes pulseBorder{0%,100%{box-shadow:none}50%{box-shadow:0 0 0 4px rgba(200,168,75,.3)}}
+
+.form-shell{max-width:820px;margin:0 auto;padding:clamp(16px,4vw,32px) clamp(12px,4vw,32px) 60px}
+.sec-card{background:white;border:1px solid var(--border2);border-radius:var(--r3);margin-bottom:20px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .3s}
+.sec-card:hover{box-shadow:var(--shadow2)}
+.sec-header{background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);padding:14px 22px;display:flex;align-items:center;gap:12px}
+.sec-icon{width:34px;height:34px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,rgba(200,168,75,.25),rgba(200,168,75,.08));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px}
+.sec-title-ar{font-family:'Amiri',serif;font-size:17px;font-weight:700;color:var(--gold-l)}
+body.ltr .sec-title-ar{font-family:'Cinzel',serif;font-size:13px;letter-spacing:1px}
+.sec-title-en{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--muted2);margin-top:2px}
+.sec-body{padding:clamp(16px,3vw,26px) clamp(14px,3vw,26px)}
+
+.field-grid{display:grid;gap:14px}
+.field-grid.cols2{grid-template-columns:1fr 1fr}
+.field-grid.cols3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:600px){.field-grid.cols2,.field-grid.cols3{grid-template-columns:1fr}}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fl{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--ink3);text-transform:uppercase}
+body[data-lang="ar"] .fl{font-family:'Tajawal',sans-serif;letter-spacing:.3px;font-size:12px;text-transform:none}
+.fl-sub{font-size:10px;color:var(--muted);font-weight:400;margin-top:1px;letter-spacing:.5px;display:block;font-style:italic}
+.inp,.sel,.ta{width:100%;background:var(--parch);border:1.5px solid var(--parch3);border-radius:var(--r);padding:11px 14px;font-size:14px;font-family:inherit;color:var(--ink);outline:none;transition:all .25s;appearance:none;-webkit-appearance:none;min-height:44px}
+.inp:focus,.sel:focus,.ta:focus{border-color:var(--gold);background:white;box-shadow:0 0 0 3px rgba(200,168,75,.15)}
+.inp::placeholder,.ta::placeholder{color:var(--muted);font-style:italic;font-size:13px}
+.ta{resize:vertical;min-height:90px}
+.sel{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C2A356' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 14px center;padding-left:36px;cursor:pointer}
+body[data-lang="ar"] .sel{background-position:right 14px center;padding-left:14px;padding-right:36px}
+.radio-group{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.radio-opt{display:flex;align-items:center;gap:7px;background:var(--parch);border:1.5px solid var(--parch3);border-radius:var(--r);padding:9px 14px;cursor:pointer;transition:all .25s;font-size:13px;color:var(--ink);user-select:none;min-height:44px}
+.radio-opt:hover{border-color:var(--gold-d);background:var(--parch2)}
+.radio-opt input[type=radio]{position:absolute;opacity:0;width:0;height:0}
+.radio-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--parch3);transition:all .25s;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.radio-opt input:checked~.radio-dot{border-color:var(--gold);background:var(--gold)}
+.radio-opt input:checked~.radio-dot::after{content:'';width:6px;height:6px;background:white;border-radius:50%}
+.radio-opt:has(input:checked){border-color:var(--gold);background:rgba(200,168,75,.08);color:var(--gold-d);font-weight:600}
+.date-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.form-date{background:linear-gradient(135deg,rgba(200,168,75,.12),rgba(200,168,75,.04));border:1px solid var(--border);border-radius:var(--r);padding:9px 14px;font-size:13px;color:var(--gold-d);font-weight:600;letter-spacing:.5px;display:inline-flex;align-items:center;gap:8px}
+.form-date::before{content:'📅';font-size:14px}
+
+/* ── SIGNATURE — FULLY FIXED ── */
+.sig-wrap{position:relative;width:100%}
+.sig-container{
+  width:100%;height:180px;position:relative;
+  border:2px solid var(--parch3);border-radius:var(--r2);
+  background:var(--parch);cursor:crosshair;
+  transition:border-color .25s,box-shadow .25s;
+  overflow:hidden;
+}
+.sig-container.active{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,168,75,.15)}
+#sigCanvas{position:absolute;top:0;left:0;width:100%;height:100%;display:block;touch-action:none}
+.sig-ph{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;transition:opacity .3s}
+.sig-ph.gone{opacity:0}
+.sig-ph-icon{font-size:32px;display:block;margin-bottom:6px;opacity:.35}
+.sig-ph-text{font-size:12px;color:var(--muted);font-style:italic}
+.sig-hint{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;font-style:italic}
+.sig-btns{display:flex;gap:8px;margin-top:10px;justify-content:flex-end}
+.sig-btn{background:var(--parch2);border:1px solid var(--border2);border-radius:var(--r);padding:8px 18px;font-size:12px;color:var(--ink3);cursor:pointer;transition:all .25s;font-family:inherit;font-weight:600;min-height:40px}
+.sig-btn:hover{border-color:var(--gold);color:var(--gold-d)}
+.sig-btn.clear{color:var(--red);border-color:rgba(192,57,43,.2)}
+.sig-btn.clear:hover{border-color:var(--red);background:rgba(192,57,43,.06)}
+
+.form-section{display:none}
+.form-section.visible{display:block}
+
+.submit-area{text-align:center;padding:24px 0 12px;border-top:1px solid var(--border2);margin-top:8px}
+.submit-note{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.8;font-style:italic}
+.submit-btn{background:linear-gradient(135deg,var(--gold-s),var(--gold-l),var(--gold),var(--gold-d));color:var(--ink);font-family:inherit;font-size:clamp(14px,2vw,16px);font-weight:800;padding:16px clamp(36px,8vw,72px);border-radius:100px;border:none;cursor:pointer;letter-spacing:1px;box-shadow:0 6px 36px rgba(200,168,75,.45);transition:all .3s;position:relative;overflow:hidden;min-height:52px}
+.submit-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .55s}
+.submit-btn:hover::before{left:100%}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 48px rgba(200,168,75,.6)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+.spinner{display:inline-block;width:17px;height:17px;border:2px solid rgba(15,46,38,.25);border-top-color:var(--ink);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-inline-end:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-msg{display:none;background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.3);border-radius:var(--r);padding:14px 18px;margin-top:16px;font-size:14px;color:var(--red);text-align:center;line-height:1.6}
+.error-msg.show{display:block}
+
+.success-panel{display:none;text-align:center;padding:48px 24px;background:linear-gradient(135deg,rgba(30,107,69,.08),rgba(30,107,69,.03));border:1px solid rgba(30,107,69,.25);border-radius:var(--r3);margin-top:24px}
+.success-panel.show{display:block}
+.success-icon{font-size:56px;margin-bottom:16px;display:block}
+.success-title{font-family:'Amiri',serif;font-size:28px;color:var(--green);margin-bottom:10px}
+body.ltr .success-title{font-family:'Cinzel',serif;font-size:22px}
+.success-text{font-size:15px;color:var(--muted);line-height:1.8}
+
+.site-footer{background:var(--ink);border-top:1px solid var(--border);padding:24px;text-align:center}
+.footer-gold{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-l);letter-spacing:3px;margin-bottom:6px}
+.footer-sub{font-size:11px;color:var(--muted2);letter-spacing:1px}
+
+@keyframes slideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.form-section.visible,.sec-card{animation:slideUp .35s ease both}
+@media(max-width:480px){.type-step-header{flex-wrap:wrap;gap:10px}.wa-block{flex-direction:column;align-items:flex-start;gap:10px}}
+</style>
+</head>
+<body data-lang="ar">
+
+<nav class="lang-bar">
+  <button class="lb active" onclick="setLang('ar')">عربي</button>
+  <button class="lb" onclick="setLang('en')">English</button>
+  <button class="lb" onclick="setLang('ru')">Русский</button>
+  <button class="lb" onclick="setLang('fr')">Français</button>
+</nav>
+
+<header class="site-header">
+  <div class="gold-top-bar"></div>
+  <div class="header-glow"></div>
+  <div class="logo-wrap">
+    <div class="logo-img-wrap" id="logoImgWrap">
+      <img src="aliyatul-quran-logo.png" class="logo-real" alt="عالية القرآن"
+        onerror="this.parentElement.style.display='none';document.getElementById('logoFallback').style.display='flex';">
+    </div>
+    <div class="logo-hex" id="logoFallback" style="display:none">
+      <span class="logo-letter">ع</span>
+    </div>
+    <span class="center-name-ar" data-t="ar">مركز عالية القرآن</span>
+    <span class="center-name-ar" data-t="en ru fr" style="font-family:'Cinzel',serif;font-size:clamp(14px,3vw,26px);letter-spacing:5px">Aliyatul Quran Institute</span>
+    <span class="center-name-en">Aliyatul Quran Institute  ◆  New Cairo, Egypt</span>
+    <div class="header-divider"></div>
+    <p class="center-sub" data-t="ar">مركز تعليم اللغة العربية والعلوم الإسلامية</p>
+    <p class="center-sub" data-t="en">Centre for Arabic Language &amp; Islamic Studies</p>
+    <p class="center-sub" data-t="ru">Центр арабского языка и исламских наук</p>
+    <p class="center-sub" data-t="fr">Centre d'arabe et de sciences islamiques</p>
+  </div>
+  <div class="welcome-box">
+    <p class="welcome-title" data-t="ar">بسم الله، أهلاً بك في عالية القرآن</p>
+    <p class="welcome-title" data-t="en">Welcome to Aliyatul Quran Institute</p>
+    <p class="welcome-title" data-t="ru">Добро пожаловать в Алиятул Куран</p>
+    <p class="welcome-title" data-t="fr">Bienvenue à Aliyatul Quran Institute</p>
+    <p class="welcome-text" data-t="ar">هذا النموذج هو خطوتك الأولى نحو دراسة كتاب الله واللغة التي أنزله بها. سواء كنت تنضم إلينا لتعلم القرآن أو العربية، أو لتسجيل طفلك، نحن سعداء بقدومك. يُرجى استكمال جميع الأقسام المنطبقة عليك. للأطفال، يجب أن يملأ هذا النموذج أحد الوالدين أو ولي الأمر. نسأل الله أن يبارك رحلتك ويجعلها سبباً للخير لك ولأسرتك.</p>
+    <p class="welcome-text" data-t="en">This form is your first step towards studying the Book of Allāh and the language He revealed it in. Whether you are joining us for Qur'ān, Arabic, or to enrol your child, we are glad you are here. Please complete all sections that apply to you. For children, a parent or guardian should fill in this form. We ask Allāh to bless your journey.</p>
+    <p class="welcome-text" data-t="ru">Эта форма — ваш первый шаг к изучению Книги Аллаха. Заполните все применимые разделы. Для детей форму должен заполнить родитель или опекун. Просим Аллаха благословить ваш путь.</p>
+    <p class="welcome-text" data-t="fr">Ce formulaire est votre première étape vers l'étude du Livre d'Allah. Veuillez remplir toutes les sections qui vous concernent. Pour les enfants, un parent ou tuteur doit remplir ce formulaire.</p>
+    <div class="wa-block">
+      <a href="https://wa.me/201031277199" target="_blank" rel="noopener noreferrer" class="wa-btn">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-t="ar">تواصل معنا عبر واتساب</span>
+        <span data-t="en">Contact us on WhatsApp</span>
+        <span data-t="ru">Связаться через WhatsApp</span>
+        <span data-t="fr">Contactez-nous sur WhatsApp</span>
+      </a>
+      <span class="wa-num">+20 10 3127 7199</span>
+    </div>
+  </div>
+</header>
+
+<div class="location-section">
+  <div class="location-card">
+    <div class="location-inner">
+      <div class="location-pin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-l)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="location-content">
+        <p class="location-label" data-t="ar">موقع المركز</p>
+        <p class="location-label" data-t="en">Our Location</p>
+        <p class="location-label" data-t="ru">Наш адрес</p>
+        <p class="location-label" data-t="fr">Notre adresse</p>
+        <p class="location-title" data-t="ar">مركز عالية القرآن — التجمع الخامس</p>
+        <p class="location-title" data-t="en">Aliyatul Quran Institute — Fifth Settlement, New Cairo</p>
+        <p class="location-title" data-t="ru">Центр Алиятул Куран — Пятое поселение, Новый Каир</p>
+        <p class="location-title" data-t="fr">Centre Aliyatul Quran — Cinquième quartier, Le Caire</p>
+        <p class="location-address" data-t="ar" style="direction:rtl;text-align:right;font-family:'Tajawal',sans-serif">26 عائلى 3 المستثمرين الجنوبى<br>خلف مسجد احمد المليجى<br>التجمع الخامس، القاهرة الجديدة، مصر</p>
+        <p class="location-address" data-t="en">26 Family 3, South Investors,<br>Behind Ahmed El-Meliegy Mosque,<br>Fifth Settlement, New Cairo, Egypt</p>
+        <p class="location-address" data-t="ru">26 Сектор 3, Южные инвесторы,<br>позади мечети Ахмед Эль-Мелиджи,<br>Пятое поселение, Новый Каир, Египет</p>
+        <p class="location-address" data-t="fr">26 Famille 3, Investisseurs du Sud,<br>derrière la mosquée Ahmed El-Meliegy,<br>Cinquième Établissement, Le Caire, Égypte</p>
+        <a href="https://maps.google.com/?q=30.004839,31.473961" target="_blank" rel="noopener noreferrer" class="maps-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-t="ar">فتح الموقع على خرائط Google</span>
+          <span data-t="en">Open in Google Maps</span>
+          <span data-t="ru">Открыть в Google Maps</span>
+          <span data-t="fr">Ouvrir dans Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="type-step">
+  <div class="type-step-card" id="typeCard">
+    <div class="type-step-header">
+      <div class="type-step-num">1</div>
+      <div class="type-step-titles">
+        <div class="type-step-main" data-t="ar">اختر نوع الطلب</div>
+        <div class="type-step-main" data-t="en">Select Application Type</div>
+        <div class="type-step-main" data-t="ru">Выберите тип заявки</div>
+        <div class="type-step-main" data-t="fr">Choisissez le type de demande</div>
+        <div class="type-step-sub">Step 1 of 2  ·  خطوة ١ من ٢</div>
+      </div>
+      <div class="type-required-badge" data-t="ar">مطلوب ●</div>
+      <div class="type-required-badge" data-t="en">Required ●</div>
+      <div class="type-required-badge" data-t="ru">Обязательно ●</div>
+      <div class="type-required-badge" data-t="fr">Obligatoire ●</div>
+    </div>
+    <div class="type-step-body">
+      <p class="type-instruction" data-t="ar">يرجى اختيار إحدى الفئات أدناه — سيظهر النموذج المناسب لك تلقائياً</p>
+      <p class="type-instruction" data-t="en">Please select one category below — the relevant form sections will appear automatically</p>
+      <p class="type-instruction" data-t="ru">Выберите одну из категорий — соответствующие разделы формы появятся автоматически</p>
+      <p class="type-instruction" data-t="fr">Sélectionnez une catégorie — les sections du formulaire apparaîtront automatiquement</p>
+      <div class="type-grid">
+        <div class="type-btn" onclick="selectType('adult',this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){selectType('adult',this)}">
+          <span class="type-check">✓</span>
+          <span class="type-icon">🎓</span>
+          <span class="type-name" data-t="ar">طالب بالغ</span>
+          <span class="type-name" data-t="en ru fr">Adult Student</span>
+          <span class="type-name-sub" data-t="ar">Adult Student</span>
+          <span class="type-name-sub" data-t="en ru fr">طالب بالغ</span>
+        </div>
+        <div class="type-btn" onclick="selectType('child',this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){selectType('child',this)}">
+          <span class="type-check">✓</span>
+          <span class="type-icon">🌱</span>
+          <span class="type-name" data-t="ar">طفل — حضانة / روضة</span>
+          <span class="type-name" data-t="en ru fr">Child — Nursery / KG</span>
+          <span class="type-name-sub" data-t="ar">Child / Nursery / KG</span>
+          <span class="type-name-sub" data-t="en ru fr">طفل — حضانة / روضة</span>
+        </div>
+        <div class="type-btn" onclick="selectType('staff',this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){selectType('staff',this)}">
+          <span class="type-check">✓</span>
+          <span class="type-icon">🏛️</span>
+          <span class="type-name" data-t="ar">موظف / معلمة</span>
+          <span class="type-name" data-t="en ru fr">Staff / Teacher</span>
+          <span class="type-name-sub" data-t="ar">Staff / Teacher</span>
+          <span class="type-name-sub" data-t="en ru fr">موظف / معلمة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-shell">
+<form id="mainForm" novalidate>
+  <div style="margin-bottom:20px;display:flex;align-items:center;gap:12px;justify-content:flex-end">
+    <div class="form-date" id="formDate"></div>
+    <input type="hidden" name="application_date" id="appDate">
+  </div>
+
+  <div class="sec-card form-section visible" data-sections="adult child staff">
+    <div class="sec-header"><div class="sec-icon">👤</div><div>
+      <div class="sec-title-ar" data-t="ar">البيانات الشخصية</div>
+      <div class="sec-title-ar" data-t="en">Personal Information</div>
+      <div class="sec-title-ar" data-t="ru">Личная информация</div>
+      <div class="sec-title-ar" data-t="fr">Informations personnelles</div>
+      <div class="sec-title-en">Personal Information · البيانات الشخصية</div>
+    </div></div>
+    <div class="sec-body">
+      <div class="field-grid cols2" style="margin-bottom:14px">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">الاسم الكامل</span><span data-t="en">Full Name</span><span data-t="ru">Полное имя</span><span data-t="fr">Nom complet</span></label>
+          <input type="text" class="inp" name="full_name" required placeholder="—" autocomplete="name">
+        </div>
+        <div class="fg form-section" data-sections="child">
+          <label class="fl"><span data-t="ar">اسم الأم</span><span data-t="en">Mother's Name</span><span data-t="ru">Имя матери</span><span data-t="fr">Nom de la mère</span><span class="fl-sub" data-t="ar">للأطفال فقط</span><span class="fl-sub" data-t="en ru fr">children only</span></label>
+          <input type="text" class="inp" name="mother_name" placeholder="—">
+        </div>
+      </div>
+      <div class="field-grid cols3" style="margin-bottom:14px">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">العمر</span><span data-t="en">Age</span><span data-t="ru">Возраст</span><span data-t="fr">Âge</span></label>
+          <input type="number" class="inp" name="age" min="1" max="99" placeholder="—">
+        </div>
+        <div class="fg">
+          <label class="fl"><span data-t="ar">الجنس</span><span data-t="en">Gender</span><span data-t="ru">Пол</span><span data-t="fr">Sexe</span></label>
+          <select class="sel" name="gender">
+            <option value="" disabled selected>—</option>
+            <option value="ذكر" data-t="ar">ذكر</option><option value="Male" data-t="en ru fr">Male</option>
+            <option value="أنثى" data-t="ar">أنثى</option><option value="Female" data-t="en ru fr">Female</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label class="fl"><span data-t="ar">الجنسية</span><span data-t="en">Nationality</span><span data-t="ru">Гражданство</span><span data-t="fr">Nationalité</span></label>
+          <input type="text" class="inp" name="nationality" placeholder="—">
+        </div>
+      </div>
+      <div class="form-section" data-sections="adult staff" style="margin-bottom:14px">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">الحالة الاجتماعية</span><span data-t="en">Marital Status</span><span data-t="ru">Семейное положение</span><span data-t="fr">Situation familiale</span></label>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="marital" value="single"><div class="radio-dot"></div><span data-t="ar">أعزب / عزباء</span><span data-t="en">Single</span><span data-t="ru">Холост</span><span data-t="fr">Célibataire</span></label>
+          <label class="radio-opt"><input type="radio" name="marital" value="married"><div class="radio-dot"></div><span data-t="ar">متزوج / متزوجة</span><span data-t="en">Married</span><span data-t="ru">Женат</span><span data-t="fr">Marié(e)</span></label>
+          <label class="radio-opt"><input type="radio" name="marital" value="engaged"><div class="radio-dot"></div><span data-t="ar">مخطوب / مخطوبة</span><span data-t="en">Engaged</span><span data-t="ru">Помолвлен</span><span data-t="fr">Fiancé(e)</span></label>
+          <label class="radio-opt"><input type="radio" name="marital" value="divorced"><div class="radio-dot"></div><span data-t="ar">مطلق / مطلقة</span><span data-t="en">Divorced</span><span data-t="ru">Разведён</span><span data-t="fr">Divorcé(e)</span></label>
+        </div>
+      </div>
+      <div class="field-grid cols2">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">رقم جواز السفر</span><span data-t="en">Passport Number</span><span data-t="ru">Номер паспорта</span><span data-t="fr">Numéro de passeport</span></label>
+          <input type="text" class="inp" name="passport" placeholder="—" dir="ltr">
+        </div>
+        <div class="fg">
+          <label class="fl"><span data-t="ar">العنوان في مصر</span><span data-t="en">Address in Egypt</span><span data-t="ru">Адрес в Египте</span><span data-t="fr">Adresse en Égypte</span></label>
+          <input type="text" class="inp" name="address_egypt" placeholder="—">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-card form-section visible" data-sections="adult child staff">
+    <div class="sec-header"><div class="sec-icon">📞</div><div>
+      <div class="sec-title-ar" data-t="ar">بيانات التواصل</div>
+      <div class="sec-title-ar" data-t="en">Contact Details</div>
+      <div class="sec-title-ar" data-t="ru">Контактные данные</div>
+      <div class="sec-title-ar" data-t="fr">Coordonnées</div>
+      <div class="sec-title-en">Contact Details · بيانات التواصل</div>
+    </div></div>
+    <div class="sec-body">
+      <div class="field-grid cols2" style="margin-bottom:14px">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">البريد الإلكتروني</span><span data-t="en">Email Address</span><span data-t="ru">Электронная почта</span><span data-t="fr">Adresse e-mail</span></label>
+          <input type="email" class="inp" name="email" dir="ltr" placeholder="—">
+        </div>
+        <div class="fg">
+          <label class="fl"><span data-t="ar">الهاتف (بلد الإقامة)</span><span data-t="en">Phone — Home Country</span><span data-t="ru">Телефон (родная страна)</span><span data-t="fr">Téléphone — Pays d'origine</span></label>
+          <input type="tel" class="inp" name="phone_home" dir="ltr" placeholder="+1 XXX XXX XXXX">
+        </div>
+      </div>
+      <div class="field-grid cols2" style="margin-bottom:14px">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">الهاتف (مصر)</span><span data-t="en">Phone — Egypt</span><span data-t="ru">Телефон (Египет)</span><span data-t="fr">Téléphone — Égypte</span></label>
+          <input type="tel" class="inp" name="phone_egypt" dir="ltr" placeholder="+20 XXX XXX XXXX">
+        </div>
+        <div class="fg form-section" data-sections="child">
+          <label class="fl"><span data-t="ar">هاتف الأب</span><span data-t="en">Father's Phone</span><span data-t="ru">Телефон отца</span><span data-t="fr">Téléphone du père</span><span class="fl-sub" data-t="ar">للأطفال فقط</span><span class="fl-sub" data-t="en ru fr">children only</span></label>
+          <input type="tel" class="inp" name="father_phone" dir="ltr" placeholder="+XXX XXX XXX XXXX">
+        </div>
+      </div>
+      <div class="field-grid cols2" style="margin-bottom:14px">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">فيسبوك</span><span data-t="en ru fr">Facebook</span></label>
+          <input type="text" class="inp" name="facebook" dir="ltr" placeholder="—">
+        </div>
+        <div class="fg">
+          <label class="fl"><span data-t="ar">تيليجرام (المعرف أو الرقم)</span><span data-t="en ru fr">Telegram ID/Number</span></label>
+          <input type="text" class="inp" name="telegram" dir="ltr" placeholder="—">
+        </div>
+      </div>
+      <div class="field-grid cols2">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">كيف سمعت عنا؟</span><span data-t="en">How Did You Hear About Us?</span><span data-t="ru">Как вы о нас узнали?</span><span data-t="fr">Comment avez-vous entendu parler de nous ?</span></label>
+          <select class="sel" name="heard_about" id="heardAboutSelect" onchange="toggleHeardOther(this)">
+            <option value="" disabled selected>—</option>
+            <option value="Instagram" data-t="ar">إنستغرام</option><option value="Instagram" data-t="en ru fr">Instagram</option>
+            <option value="Facebook" data-t="ar">فيسبوك</option><option value="Facebook" data-t="en ru fr">Facebook</option>
+            <option value="TikTok" data-t="ar">تيك توك</option><option value="TikTok" data-t="en ru fr">TikTok</option>
+            <option value="Telegram" data-t="ar">تيليجرام</option><option value="Telegram" data-t="en ru fr">Telegram</option>
+            <option value="WhatsApp" data-t="ar">واتساب</option><option value="WhatsApp" data-t="en ru fr">WhatsApp</option>
+            <option value="Friend" data-t="ar">صديق</option><option value="Friend" data-t="en">Friend</option><option value="Friend" data-t="ru">Друг</option><option value="Friend" data-t="fr">Ami</option>
+            <option value="Masjid" data-t="ar">المسجد</option><option value="Masjid" data-t="en">Masjid</option><option value="Masjid" data-t="ru">Мечеть</option><option value="Masjid" data-t="fr">Mosquée</option>
+            <option value="Other" data-t="ar">غير ذلك</option><option value="Other" data-t="en">Other</option><option value="Other" data-t="ru">Другое</option><option value="Other" data-t="fr">Autre</option>
+          </select>
+        </div>
+        <div class="fg" id="heardOtherWrap" style="display:none">
+          <label class="fl"><span data-t="ar">يرجى التحديد</span><span data-t="en">Please Specify</span><span data-t="ru">Пожалуйста, уточните</span><span data-t="fr">Veuillez préciser</span></label>
+          <input type="text" class="inp" name="heard_about_other" id="heardOtherInput" placeholder="—">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-card form-section" data-sections="adult">
+    <div class="sec-header"><div class="sec-icon">📚</div><div>
+      <div class="sec-title-ar" data-t="ar">للطلاب البالغين فقط</div>
+      <div class="sec-title-ar" data-t="en">Adult Students Only</div>
+      <div class="sec-title-ar" data-t="ru">Только для взрослых</div>
+      <div class="sec-title-ar" data-t="fr">Étudiants adultes uniquement</div>
+      <div class="sec-title-en">Adult Students Only</div>
+    </div></div>
+    <div class="sec-body">
+      <div class="fg" style="margin-bottom:14px">
+        <label class="fl"><span data-t="ar">لماذا تريد تعلم اللغة العربية؟</span><span data-t="en">Why do you want to learn Arabic?</span><span data-t="ru">Почему вы хотите учить арабский?</span><span data-t="fr">Pourquoi souhaitez-vous apprendre l'arabe ?</span></label>
+        <textarea class="ta" name="why_arabic" placeholder="—"></textarea>
+      </div>
+      <div class="fg" style="margin-bottom:14px">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">ماذا تريد أن تدرس؟</span><span data-t="en">What would you like to study?</span><span data-t="ru">Что вы хотите изучать?</span><span data-t="fr">Que souhaitez-vous étudier ?</span></label>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="study_type" value="fus7a"><div class="radio-dot"></div><span data-t="ar">العربية الفصحى</span><span data-t="en">Modern Standard Arabic</span><span data-t="ru">Классический арабский</span><span data-t="fr">Arabe standard</span></label>
+          <label class="radio-opt"><input type="radio" name="study_type" value="dialect"><div class="radio-dot"></div><span data-t="ar">العامية</span><span data-t="en">Colloquial / Dialect</span><span data-t="ru">Разговорный</span><span data-t="fr">Dialectal</span></label>
+          <label class="radio-opt"><input type="radio" name="study_type" value="both"><div class="radio-dot"></div><span data-t="ar">كلاهما</span><span data-t="en">Both</span><span data-t="ru">Оба</span><span data-t="fr">Les deux</span></label>
+        </div>
+      </div>
+      <div class="field-grid cols2" style="margin-bottom:14px">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">المادة / الكتاب المراد دراسته</span><span data-t="en">Subject / Book to Study</span><span data-t="ru">Предмет / Книга</span><span data-t="fr">Matière / Livre</span></label>
+          <input type="text" class="inp" name="book_subject" placeholder="—">
+        </div>
+        <div class="fg">
+          <label class="fl"><span data-t="ar">الوقت المفضل للدراسة</span><span data-t="en">Preferred Study Time</span><span data-t="ru">Предпочтительное время</span><span data-t="fr">Horaire préféré</span></label>
+          <input type="text" class="inp" name="study_time" placeholder="—">
+        </div>
+      </div>
+      <div class="fg" style="margin-bottom:14px">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">مدة الإقامة في مصر</span><span data-t="en">Duration of Stay in Egypt</span><span data-t="ru">Продолжительность пребывания</span><span data-t="fr">Durée du séjour en Égypte</span></label>
+        <div class="date-row">
+          <div class="fg" style="flex:1;min-width:120px"><label class="fl"><span data-t="ar">من</span><span data-t="en ru fr">From</span></label><input type="date" class="inp" name="stay_from" dir="ltr"></div>
+          <div class="fg" style="flex:1;min-width:120px"><label class="fl"><span data-t="ar">إلى</span><span data-t="en ru fr">To</span></label><input type="date" class="inp" name="stay_to" dir="ltr"></div>
+        </div>
+      </div>
+      <div class="fg">
+        <label class="fl"><span data-t="ar">الهوايات والاهتمامات</span><span data-t="en">Hobbies &amp; Interests</span><span data-t="ru">Хобби и интересы</span><span data-t="fr">Loisirs et intérêts</span></label>
+        <textarea class="ta" name="hobbies" style="min-height:70px" placeholder="—"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-card form-section" data-sections="child">
+    <div class="sec-header"><div class="sec-icon">🌸</div><div>
+      <div class="sec-title-ar" data-t="ar">للأطفال فقط — حضانة / روضة</div>
+      <div class="sec-title-ar" data-t="en">Children Only — Nursery &amp; KG</div>
+      <div class="sec-title-ar" data-t="ru">Только для детей</div>
+      <div class="sec-title-ar" data-t="fr">Enfants uniquement</div>
+      <div class="sec-title-en">Children — Nursery &amp; KG</div>
+    </div></div>
+    <div class="sec-body">
+      <div class="fg" style="margin-bottom:14px">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">البرنامج المختار</span><span data-t="en">Programme Chosen</span><span data-t="ru">Выбранная программа</span><span data-t="fr">Programme choisi</span></label>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="child_programme" value="full"><div class="radio-dot"></div><span data-t="ar">المنهج الكامل</span><span data-t="en">Full Curriculum</span><span data-t="ru">Полная программа</span><span data-t="fr">Programme complet</span></label>
+          <label class="radio-opt"><input type="radio" name="child_programme" value="quran"><div class="radio-dot"></div><span data-t="ar">القرآن الكريم</span><span data-t="en">Qur'an</span><span data-t="ru">Коран</span><span data-t="fr">Coran</span></label>
+          <label class="radio-opt"><input type="radio" name="child_programme" value="arabic"><div class="radio-dot"></div><span data-t="ar">اللغة العربية</span><span data-t="en">Arabic</span><span data-t="ru">Арабский</span><span data-t="fr">Arabe</span></label>
+        </div>
+      </div>
+      <div class="fg" style="margin-bottom:14px">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">هل لديه إخوة؟</span><span data-t="en">Any siblings?</span><span data-t="ru">Есть братья/сёстры?</span><span data-t="fr">A-t-il des frères/sœurs ?</span></label>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="siblings" value="yes"><div class="radio-dot"></div><span data-t="ar">نعم</span><span data-t="en">Yes</span><span data-t="ru">Да</span><span data-t="fr">Oui</span></label>
+          <label class="radio-opt"><input type="radio" name="siblings" value="no"><div class="radio-dot"></div><span data-t="ar">لا</span><span data-t="en">No</span><span data-t="ru">Нет</span><span data-t="fr">Non</span></label>
+        </div>
+      </div>
+      <div class="field-grid cols2" style="margin-bottom:14px">
+        <div class="fg">
+          <label class="fl"><span data-t="ar">المسؤول عن استلام الطفل</span><span data-t="en">Responsible for Pickup</span><span data-t="ru">Ответственный за получение</span><span data-t="fr">Responsable de la récupération</span></label>
+          <input type="text" class="inp" name="pickup_person" placeholder="—">
+        </div>
+        <div class="fg">
+          <label class="fl"><span data-t="ar">تاريخ بدء الشهر</span><span data-t="en">Month Starts At</span><span data-t="ru">Начало месяца</span><span data-t="fr">Début du mois</span></label>
+          <input type="date" class="inp" name="month_start" dir="ltr">
+        </div>
+      </div>
+      <div class="fg">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">مدة الإقامة في مصر</span><span data-t="en">Duration of Stay</span><span data-t="ru">Продолжительность пребывания</span><span data-t="fr">Durée du séjour</span></label>
+        <div class="date-row">
+          <div class="fg" style="flex:1;min-width:120px"><label class="fl"><span data-t="ar">من</span><span data-t="en ru fr">From</span></label><input type="date" class="inp" name="child_stay_from" dir="ltr"></div>
+          <div class="fg" style="flex:1;min-width:120px"><label class="fl"><span data-t="ar">إلى</span><span data-t="en ru fr">To</span></label><input type="date" class="inp" name="child_stay_to" dir="ltr"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-card form-section" data-sections="staff">
+    <div class="sec-header"><div class="sec-icon">🏛️</div><div>
+      <div class="sec-title-ar" data-t="ar">للموظفين والمعلمين فقط</div>
+      <div class="sec-title-ar" data-t="en">Staff &amp; Teachers Only</div>
+      <div class="sec-title-ar" data-t="ru">Только для персонала</div>
+      <div class="sec-title-ar" data-t="fr">Personnel et enseignants</div>
+      <div class="sec-title-en">Staff &amp; Teachers Only</div>
+    </div></div>
+    <div class="sec-body">
+      <div class="field-grid cols2" style="margin-bottom:14px">
+        <div class="fg"><label class="fl"><span data-t="ar">المؤهل العلمي</span><span data-t="en">Qualification</span><span data-t="ru">Квалификация</span><span data-t="fr">Qualification</span></label><input type="text" class="inp" name="qualification" placeholder="—"></div>
+        <div class="fg"><label class="fl"><span data-t="ar">التقديم لقسم</span><span data-t="en">Applying for Department</span><span data-t="ru">Отдел / Должность</span><span data-t="fr">Département / Poste</span></label><input type="text" class="inp" name="department" placeholder="—"></div>
+      </div>
+      <div class="fg" style="margin-bottom:14px"><label class="fl"><span data-t="ar">آخر راتب</span><span data-t="en">Last Salary</span><span data-t="ru">Последняя зарплата</span><span data-t="fr">Dernier salaire</span></label><input type="text" class="inp" name="last_salary" placeholder="—" dir="ltr"></div>
+      <div class="fg"><label class="fl"><span data-t="ar">الخبرات السابقة</span><span data-t="en">Previous Experience</span><span data-t="ru">Предыдущий опыт</span><span data-t="fr">Expérience précédente</span></label><textarea class="ta" name="experience" placeholder="—"></textarea></div>
+    </div>
+  </div>
+
+  <div class="sec-card form-section visible" data-sections="adult child staff">
+    <div class="sec-header"><div class="sec-icon">🏥</div><div>
+      <div class="sec-title-ar" data-t="ar">الملاحظات الطبية</div>
+      <div class="sec-title-ar" data-t="en">Medical Notes</div>
+      <div class="sec-title-ar" data-t="ru">Медицинские сведения</div>
+      <div class="sec-title-ar" data-t="fr">Informations médicales</div>
+      <div class="sec-title-en">Medical Notes · الملاحظات الطبية</div>
+    </div></div>
+    <div class="sec-body">
+      <div class="fg" style="margin-bottom:14px">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">هل يوجد حالات طبية؟</span><span data-t="en">Any medical conditions?</span><span data-t="ru">Есть медицинские условия?</span><span data-t="fr">Y a-t-il des conditions médicales ?</span></label>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="medical_conditions" value="yes"><div class="radio-dot"></div><span data-t="ar">نعم</span><span data-t="en">Yes</span><span data-t="ru">Да</span><span data-t="fr">Oui</span></label>
+          <label class="radio-opt"><input type="radio" name="medical_conditions" value="no"><div class="radio-dot"></div><span data-t="ar">لا</span><span data-t="en">No</span><span data-t="ru">Нет</span><span data-t="fr">Non</span></label>
+        </div>
+      </div>
+      <div class="fg" style="margin-bottom:14px">
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">هل يوجد حساسية من طعام أو دواء؟</span><span data-t="en">Any food or medication allergies?</span><span data-t="ru">Есть аллергия?</span><span data-t="fr">Des allergies alimentaires ?</span></label>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="allergies" value="yes"><div class="radio-dot"></div><span data-t="ar">نعم</span><span data-t="en">Yes</span><span data-t="ru">Да</span><span data-t="fr">Oui</span></label>
+          <label class="radio-opt"><input type="radio" name="allergies" value="no"><div class="radio-dot"></div><span data-t="ar">لا</span><span data-t="en">No</span><span data-t="ru">Нет</span><span data-t="fr">Non</span></label>
+        </div>
+      </div>
+      <div class="fg">
+        <label class="fl"><span data-t="ar">تفاصيل (إن وجدت)</span><span data-t="en">Details if applicable</span><span data-t="ru">Подробности</span><span data-t="fr">Détails si applicable</span></label>
+        <textarea class="ta" name="medical_details" style="min-height:70px" placeholder="—"></textarea>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="submit-area">
+    <p class="submit-note" data-t="ar">بالضغط على إرسال، أقر بصحة المعلومات المدرجة في هذا النموذج</p>
+    <p class="submit-note" data-t="en">By submitting, I confirm that the information provided is accurate and complete</p>
+    <p class="submit-note" data-t="ru">Отправляя форму, я подтверждаю достоверность указанных сведений</p>
+    <p class="submit-note" data-t="fr">En soumettant ce formulaire, je confirme l'exactitude des informations</p>
+    <button type="button" class="submit-btn" id="submitBtn" onclick="handleSubmit()">
+      <span data-t="ar">إرسال الطلب ←</span>
+      <span data-t="en">Submit Application →</span>
+      <span data-t="ru">Отправить заявку →</span>
+      <span data-t="fr">Soumettre la demande →</span>
+    </button>
+    <div class="error-msg" id="errorMsg">
+      <span data-t="ar">⚠️ حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب.</span>
+      <span data-t="en">⚠️ Something went wrong. Please try again or contact us via WhatsApp.</span>
+      <span data-t="ru">⚠️ Произошла ошибка. Попробуйте снова или свяжитесь с нами через WhatsApp.</span>
+      <span data-t="fr">⚠️ Une erreur s'est produite. Veuillez réessayer ou nous contacter via WhatsApp.</span>
+    </div>
+  </div>
+</form>
+
+<div class="success-panel" id="successPanel">
+  <span class="success-icon">✅</span>
+  <p class="success-title" data-t="ar">جزاك الله خيراً — تم إرسال طلبك بنجاح</p>
+  <p class="success-title" data-t="en">JazākAllāhu khayran — Application Received</p>
+  <p class="success-title" data-t="ru">ДжазакАллаху хайран — Заявка получена</p>
+  <p class="success-title" data-t="fr">JazākAllāhu khayran — Demande reçue</p>
+  <p class="success-text" data-t="ar">سيتواصل معك فريقنا قريباً لتأكيد تسجيلك. نسأل الله أن يبارك في وقتك وعلمك.</p>
+  <p class="success-text" data-t="en">Our team will be in touch shortly to confirm your enrolment. May Allāh bless your time and knowledge.</p>
+  <p class="success-text" data-t="ru">Наша команда свяжется с вами для подтверждения регистрации.</p>
+  <p class="success-text" data-t="fr">Notre équipe vous contactera prochainement pour confirmer votre inscription.</p>
+</div>
+</div>
+
+<footer class="site-footer">
+  <p class="footer-gold">Aliyatul Quran Institute  ◆  عالية القرآن  ◆  New Cairo, Egypt</p>
+  <p class="footer-sub" data-t="ar">مركز تعليم اللغة العربية والعلوم الإسلامية</p>
+  <p class="footer-sub" data-t="en">Centre for Arabic Language &amp; Islamic Studies</p>
+  <p class="footer-sub" data-t="ru">Центр арабского языка и исламских наук</p>
+  <p class="footer-sub" data-t="fr">Centre d'arabe et de sciences islamiques</p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════
+   ALIYATUL QURAN — REGISTRATION FORM
+   Fix: ALL variables declared before any
+   function calls. TODAY must exist before
+   setLang() → updateDate() runs.
+═══════════════════════════════════════ */
+
+/* ── ENDPOINTS (replace these) ── */
+var W3F_KEY    = 'e20829b2-ca69-4eef-b9c7-4d7d07de0d0a';
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvdi9ZUWnnFLCr1-gBjSCwB2c8b9Xtz22t6pitTq29X-Eg2Z6_mSsfkTPjMI8fIABUMw/exec';
+
+/* ── DATE — declared FIRST so updateDate() can use it ── */
+var TODAY = new Date();
+
+/* ── LANGUAGE ── */
+var LANG = 'ar';
+
+function setLang(l) {
+  LANG = l;
+  document.body.setAttribute('data-lang', l);
+  document.body.className = (l === 'ar') ? '' : l;
+  document.documentElement.lang = l;
+  document.documentElement.dir  = (l === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lb').forEach(function(b) {
+    var map = {ar:'عربي', en:'English', ru:'Русский', fr:'Français'};
+    b.classList.toggle('active', b.textContent.trim() === map[l]);
+  });
+  localStorage.setItem('aliyatul_lang', l);
+  updateVis();
+  updateDate();
+}
+
+function updateVis() {
+  document.querySelectorAll('[data-t]').forEach(function(el) {
+    var t = el.getAttribute('data-t').split(' ');
+    if      (t.indexOf(LANG)       >= 0) el.style.display = 'block';
+    else if (t.indexOf(LANG+'-i')  >= 0) el.style.display = 'inline';
+    else if (t.indexOf(LANG+'-f')  >= 0) el.style.display = 'flex';
+    else                                  el.style.display = 'none';
+  });
+}
+
+function updateDate() {
+  var el = document.getElementById('formDate');
+  var dateEl = document.getElementById('appDate');
+  if (!el || !TODAY) return;
+  var localeMap = {ar:'ar-EG', en:'en-GB', ru:'ru-RU', fr:'fr-FR'};
+  el.textContent = TODAY.toLocaleDateString(
+    localeMap[LANG] || 'en-GB',
+    {year:'numeric', month:'long', day:'numeric'}
+  );
+  if (dateEl) dateEl.value = TODAY.toISOString().split('T')[0];
+}
+
+/* ── HOW DID YOU HEAR ABOUT US ── */
+function toggleHeardOther(el) {
+  var wrap = document.getElementById('heardOtherWrap');
+  if (!wrap) return;
+  if (el.value === 'Other') {
+    wrap.style.display = 'flex';
+  } else {
+    wrap.style.display = 'none';
+    var inp = document.getElementById('heardOtherInput');
+    if (inp) inp.value = '';
+  }
+}
+
+/* ── TYPE SELECTOR ── */
+var activeType = null;
+
+function selectType(type, el) {
+  activeType = type;
+  document.querySelectorAll('.type-btn').forEach(function(b) { b.classList.remove('sel'); });
+  el.classList.add('sel');
+  var card = document.getElementById('typeCard');
+  if (card) card.classList.remove('pulse-needed');
+  document.querySelectorAll('.form-section[data-sections]').forEach(function(s) {
+    var secs = s.getAttribute('data-sections').split(' ');
+    s.classList.toggle('visible', secs.indexOf(type) >= 0);
+  });
+  setTimeout(function() {
+    var form = document.getElementById('mainForm');
+    if (form) form.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 200);
+}
+
+/* ── COLLECT FORM DATA ── */
+function collectData() {
+  var form = document.getElementById('mainForm');
+  var fd   = new FormData(form);
+  var data = {};
+  fd.forEach(function(v, k) {
+    if (k !== 'signature') data[k] = v;
+  });
+  data.app_type         = activeType || '';
+  data.language         = LANG;
+  data.application_date = TODAY.toISOString().split('T')[0];
+  data.timestamp        = new Date().toISOString();
+  return data;
+}
+
+/* ── SEND TO WEB3FORMS (email notification) ── */
+function sendWeb3Forms(data) {
+  var fd = new FormData();
+  fd.append('access_key', W3F_KEY);
+  fd.append('subject',    'New Application — Aliyatul Quran | طلب تسجيل جديد — عالية القرآن');
+  fd.append('from_name',  'Aliyatul Quran Registration Form');
+  Object.keys(data).forEach(function(k) { fd.append(k, data[k] || ''); });
+  return fetch('https://api.web3forms.com/submit', {method:'POST', body:fd});
+}
+
+/* ── SEND TO GOOGLE SHEETS (no-cors) ── */
+function sendGoogleSheets(data) {
+  return fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode:   'no-cors',
+    headers: {'Content-Type': 'text/plain;charset=UTF-8'},
+    body:   JSON.stringify(data)
+  });
+}
+
+/* ── MAIN SUBMIT ── */
+function handleSubmit() {
+  if (!activeType) {
+    var msg = {
+      ar: 'يرجى اختيار نوع الطلب أولاً (الخطوة 1 أعلاه)',
+      en: 'Please select the application type first (Step 1 above)',
+      ru: 'Пожалуйста, выберите тип заявки (Шаг 1 выше)',
+      fr: 'Veuillez sélectionner le type de demande (Étape 1 ci-dessus)'
+    };
+    var card = document.getElementById('typeCard');
+    if (card) {
+      card.classList.add('pulse-needed');
+      card.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+    setTimeout(function() { alert(msg[LANG]); }, 400);
+    return;
+  }
+
+  var btn     = document.getElementById('submitBtn');
+  var errorEl = document.getElementById('errorMsg');
+  var loadMsg = {ar:'جاري الإرسال...', en:'Submitting...', ru:'Отправка...', fr:'Envoi en cours...'};
+
+  btn.disabled    = true;
+  btn.innerHTML   = '<span class="spinner"></span>' + loadMsg[LANG];
+  errorEl.classList.remove('show');
+
+  var data = collectData();
+
+  var promises = [];
+
+  if (W3F_KEY !== 'e20829b2-ca69-4eef-b9c7-4d7d07de0d0a') {
+    promises.push(sendWeb3Forms(data).catch(function(e){return {error:e};}));
+  }
+  if (SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+    promises.push(sendGoogleSheets(data).catch(function(e){return {error:e};}));
+  }
+
+  // If neither key is set yet, still show success (dev/test mode)
+  if (promises.length === 0) {
+    showSuccess();
+    return;
+  }
+
+  // Use allSettled so one failure doesn't block the other
+  var settled = Promise.allSettled
+    ? Promise.allSettled(promises)
+    : Promise.all(promises.map(function(p){ return p.then(function(v){return {status:'fulfilled',value:v};},function(e){return {status:'rejected',reason:e};}); }));
+
+  settled.then(function(results) {
+    // Log results for debugging
+    results.forEach(function(r, i) {
+      console.log('Request', i+1, ':', r.status, r.reason || '');
+    });
+    showSuccess();
+  });
+}
+
+function showSuccess() {
+  var form  = document.getElementById('mainForm');
+  var panel = document.getElementById('successPanel');
+  if (form)  form.style.display = 'none';
+  if (panel) {
+    panel.classList.add('show');
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+/* ── AUTO-INIT (runs LAST, after all functions defined) ── */
+(function init() {
+  // 1. detect & apply language
+  var saved    = localStorage.getItem('aliyatul_lang');
+  var navLang  = (navigator.languages || [navigator.language || 'ar'])[0].toLowerCase();
+  var detected = 'ar';
+  if      (navLang.startsWith('en')) detected = 'en';
+  else if (navLang.startsWith('ru')) detected = 'ru';
+  else if (navLang.startsWith('fr')) detected = 'fr';
+  setLang(saved || detected);
+})();
+</script>
+
+<!--
+═══════════════════════════════════════════════════════════════════════
+  GOOGLE APPS SCRIPT — paste in Apps Script editor
+
+  function doPost(e) {
+    try {
+      var data = JSON.parse(e.postData.contents || '{}');
+      var ss   = SpreadsheetApp.getActiveSpreadsheet();
+      var name     = (data.full_name || 'Unnamed').replace(/[\/\\?*[\]:]/g,'');
+      var date     = data.application_date || new Date().toISOString().split('T')[0];
+      var sheetName = (name + ' ' + date).substring(0, 100);
+      var sheet = ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
+      sheet.clearContents();
+      var headerRange = sheet.getRange(1, 1, 1, 2);
+      headerRange.setValues([['Field', 'Value']]);
+      headerRange.setBackground('#0F2E26');
+      headerRange.setFontColor('#E2C97E');
+      headerRange.setFontWeight('bold');
+      var row = 2;
+      Object.keys(data).forEach(function(key) {
+        if (key !== 'signature') {
+          sheet.getRange(row, 1).setValue(key);
+          sheet.getRange(row, 2).setValue(data[key]);
+          row++;
+        }
+      });
+      if (data.signature && data.signature.startsWith('data:image')) {
+        var sigRow = row + 1;
+        sheet.getRange(sigRow, 1).setValue('Signature').setFontWeight('bold');
+        var base64 = data.signature.replace(/^data:image\/png;base64,/, '');
+        var blob   = Utilities.newBlob(Utilities.base64Decode(base64), 'image/png', 'signature.png');
+        sheet.insertImage(blob, 2, sigRow);
+        sheet.setRowHeight(sigRow, 120);
+      }
+      sheet.autoResizeColumn(1);
+      sheet.setColumnWidth(2, 400);
+      var master = ss.getSheetByName('All Applications') || ss.insertSheet('All Applications');
+      if (master.getLastRow() === 0) {
+        master.appendRow(['Timestamp','Name','Type','Language','Email','Phone Egypt','Date']);
+        master.getRange(1,1,1,7).setBackground('#0F2E26').setFontColor('#E2C97E').setFontWeight('bold');
+      }
+      master.appendRow([
+        data.timestamp || new Date().toISOString(),
+        data.full_name || '', data.app_type || '', data.language || '',
+        data.email || '', data.phone_egypt || '', data.application_date || ''
+      ]);
+      return ContentService.createTextOutput(JSON.stringify({status:'ok'}))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch(err) {
+      return ContentService.createTextOutput(JSON.stringify({status:'error',message:err.toString()}))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+═══════════════════════════════════════════════════════════════════════
+-->
+</body>
+</html>
