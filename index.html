@@ -149,6 +149,10 @@ body[data-lang="ar"] .sel{background-position:right 14px center;padding-left:14p
 .radio-opt input:checked~.radio-dot{border-color:var(--gold);background:var(--gold)}
 .radio-opt input:checked~.radio-dot::after{content:'';width:6px;height:6px;background:white;border-radius:50%}
 .radio-opt:has(input:checked){border-color:var(--gold);background:rgba(200,168,75,.08);color:var(--gold-d);font-weight:600}
+.radio-opt input[type=checkbox]{position:absolute;opacity:0;width:0;height:0}
+.chk-dot{width:16px;height:16px;border-radius:4px;border:2px solid var(--parch3);transition:all .25s;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.radio-opt input[type=checkbox]:checked~.chk-dot{border-color:var(--gold);background:var(--gold)}
+.radio-opt input[type=checkbox]:checked~.chk-dot::after{content:'';width:7px;height:4px;border-left:2px solid white;border-bottom:2px solid white;transform:rotate(-45deg) translate(1px,-1px)}
 .date-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
 .form-date{background:linear-gradient(135deg,rgba(200,168,75,.12),rgba(200,168,75,.04));border:1px solid var(--border);border-radius:var(--r);padding:9px 14px;font-size:13px;color:var(--gold-d);font-weight:600;letter-spacing:.5px;display:inline-flex;align-items:center;gap:8px}
 .form-date::before{content:'📅';font-size:14px}
@@ -489,13 +493,13 @@ body.ltr .success-title{font-family:'Cinzel',serif;font-size:22px}
         </div>
       </div>
       <div class="fg" style="margin-bottom:14px">
-        <label class="fl" style="margin-bottom:8px"><span data-t="ar">ما هو البرنامج الذي ترغب في دراسته؟</span><span data-t="en">Which course would you like to study?</span><span data-t="ru">Какой курс вы хотели бы изучать?</span><span data-t="fr">Quel programme souhaitez-vous étudier ?</span></label>
+        <label class="fl" style="margin-bottom:8px"><span data-t="ar">ما هي البرامج التي ترغب في دراستها؟ (يمكن اختيار أكثر من برنامج)</span><span data-t="en">Which course(s) would you like to study? (you may select more than one)</span><span data-t="ru">Какие курсы вы хотели бы изучать? (можно выбрать несколько)</span><span data-t="fr">Quel(s) programme(s) souhaitez-vous étudier ? (plusieurs choix possibles)</span></label>
         <div class="radio-group">
-          <label class="radio-opt"><input type="radio" name="course_choice" value="quran_memorization"><div class="radio-dot"></div><span data-t="ar">حفظ القرآن الكريم</span><span data-t="en">Qur'aan Memorization</span><span data-t="ru">Заучивание Корана наизусть</span><span data-t="fr">Mémorisation du Coran</span></label>
-          <label class="radio-opt"><input type="radio" name="course_choice" value="preparing_quran_teachers"><div class="radio-dot"></div><span data-t="ar">إعداد معلمي القرآن</span><span data-t="en">Preparing Qur'an Teachers</span><span data-t="ru">Подготовка преподавателей Корана</span><span data-t="fr">Formation des enseignants du Coran</span></label>
-          <label class="radio-opt"><input type="radio" name="course_choice" value="arabic"><div class="radio-dot"></div><span data-t="ar">اللغة العربية</span><span data-t="en">Arabic</span><span data-t="ru">Арабский язык</span><span data-t="fr">Arabe</span></label>
-          <label class="radio-opt"><input type="radio" name="course_choice" value="islamic_studies"><div class="radio-dot"></div><span data-t="ar">العلوم الإسلامية</span><span data-t="en">Islamic Studies</span><span data-t="ru">Исламские науки</span><span data-t="fr">Sciences islamiques</span></label>
-          <label class="radio-opt"><input type="radio" name="course_choice" value="qaidah_noraniyyah"><div class="radio-dot"></div><span data-t="ar">القاعدة النورانية</span><span data-t="en">Qaa'idah Nooraniyyah</span><span data-t="ru">Каида Нурания</span><span data-t="fr">Qaïda Nouraniyya</span></label>
+          <label class="radio-opt"><input type="checkbox" name="course_choice" value="quran_memorization"><div class="chk-dot"></div><span data-t="ar">حفظ القرآن الكريم</span><span data-t="en">Qur'aan Memorization</span><span data-t="ru">Заучивание Корана наизусть</span><span data-t="fr">Mémorisation du Coran</span></label>
+          <label class="radio-opt"><input type="checkbox" name="course_choice" value="preparing_quran_teachers"><div class="chk-dot"></div><span data-t="ar">إعداد معلمي القرآن</span><span data-t="en">Preparing Qur'an Teachers</span><span data-t="ru">Подготовка преподавателей Корана</span><span data-t="fr">Formation des enseignants du Coran</span></label>
+          <label class="radio-opt"><input type="checkbox" name="course_choice" value="arabic"><div class="chk-dot"></div><span data-t="ar">اللغة العربية</span><span data-t="en">Arabic</span><span data-t="ru">Арабский язык</span><span data-t="fr">Arabe</span></label>
+          <label class="radio-opt"><input type="checkbox" name="course_choice" value="islamic_studies"><div class="chk-dot"></div><span data-t="ar">العلوم الإسلامية</span><span data-t="en">Islamic Studies</span><span data-t="ru">Исламские науки</span><span data-t="fr">Sciences islamiques</span></label>
+          <label class="radio-opt"><input type="checkbox" name="course_choice" value="qaidah_noraniyyah"><div class="chk-dot"></div><span data-t="ar">القاعدة النورانية</span><span data-t="en">Qaa'idah Nooraniyyah</span><span data-t="ru">Каида Нурания</span><span data-t="fr">Qaïda Nouraniyya</span></label>
         </div>
       </div>
       <div class="field-grid cols2" style="margin-bottom:14px">
@@ -749,7 +753,12 @@ function collectData() {
   var fd   = new FormData(form);
   var data = {};
   fd.forEach(function(v, k) {
-    if (k !== 'signature') data[k] = v;
+    if (k === 'signature') return;
+    if (data.hasOwnProperty(k)) {
+      data[k] = data[k] + ', ' + v;
+    } else {
+      data[k] = v;
+    }
   });
   data.app_type         = activeType || '';
   data.language         = LANG;
